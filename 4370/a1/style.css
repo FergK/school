@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  background-color: #ffffee;
+  background-image: url("bg.gif");
+}
+
+a {
+  font-weight: bold;
+  color: blue;
+}
+
+a:visited {
+  color: darkblue;
+}
+
+a:hover {
+  color: #0080ff;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #013;
+}
+
+h4 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: #013;
+}
+
+.header, .section {
+  width: 85%;
+  background-color: #eeeeee;
+  margin: 0px auto 10px auto;
+  padding: 10px;
+  overflow: auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.section {
+  line-height: 1.6em;
+}
+
+.headshot {
+  float: right;
+  font-size: 10pt;
+  font-style: italic;
+  text-align: center;
+  border: 2px solid #555;
+  padding: 5px
+  line-height: 1em;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 11pt;
+}
+
+.assignmentsTable {
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+tr {
+  margin: 0px;
+  padding: 0px;
+}
+
+tr td {
+  margin: 0px;
+  padding: 4px;
+  border: 2px solid black;
+}
+
+.stripeRow {
+  background-color: #ddf;
+}
+
+ol, ul, li {
+  margin: 0px;
+  /*padding: 0px;*/
+}
