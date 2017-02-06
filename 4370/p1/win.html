@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+CSS Mouse Maze
+CSC 4370 Web Programming
+Project #1: CSS
+Due: 02/06/2017
+
+Deividas Rutkauskas
+Fergus Kelley
+ -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Mouse Maze: YOU WIN!!!</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+
+    .winbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0px auto;
+      width: 800px;
+      height: 600px;
+      text-align: center;
+      background-color: black;
+      color: red;
+      font-family: impact, monospace;
+    }
+
+    .wintext {
+      font-size: 72px;
+      letter-spacing: 5px;
+      animation: wigglezoom 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes wigglezoom {
+        0% {
+            transform: rotate(-15deg) scale(1);
+            color: orange;
+            text-shadow: 0px 0px 100px red;
+        }
+        50% {
+            transform: rotate(0deg) scale(2);
+            color: white;
+            text-shadow: 0px 0px 0px blue;
+        }
+        100% {
+            transform: rotate(15deg) scale(1);
+            color: red;
+            text-shadow: 0px 0px 100px orange;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="winbox">
+      <span class="wintext">YOU WIN!!!</span>
+    </div>
+
+    <div class="infobox">
+      <h1>CSS Mouse Maze</h1>
+      <h2>By Deividas Rutkauskas and Fergus Kelley</h2>
+    </div>
+
+</body>
+
+</html>

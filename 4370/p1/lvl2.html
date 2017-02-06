@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--
+CSS Mouse Maze
+CSC 4370 Web Programming
+Project #1: CSS
+Due: 02/06/2017
+
+Deividas Rutkauskas
+Fergus Kelley
+ -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Mouse Maze: Level 2</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+
+        .start {
+          background-color: lightgrey;
+          background-image: none;
+          box-shadow: inset 0px 0px 25px 0px #ff8000;
+          text-shadow: 1px 1px 2px rgba(55, 155, 255, 1);
+            z-index: 1000;
+            width: 100px;
+            height: 100px;
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        .goal {
+            background-color: lightgrey;
+            background-image: none;
+            box-shadow: inset 0px 0px 25px 0px #00ff00;
+            border-radius: 25px;
+            text-shadow: 1px 1px 2px rgba(255, 155, 55, 1);
+            z-index: 600;
+            width: 100px;
+            height: 100px;
+            margin-top: 360px;
+            margin-left: 650px;
+        }
+
+        .hlong {
+            width: 650px;
+            height: 10px;
+            margin-left: 0px;
+            margin-top: 100px;
+        }
+
+        .hlong2 {
+            width: 650px;
+            height: 10px;
+            margin-left: 150px;
+            margin-top: 320px;
+        }
+
+        .fire1 {
+            width: 25px;
+            height: 25px;
+            margin-left: 150px;
+            margin-top: 5px;
+            animation: patroly 1s infinite linear;
+            background-color: transparent;
+        }
+
+        @keyframes patroly {
+            0% {
+                transform: translateY(5px) rotateX(0);
+            }
+            50% {
+                transform: translateY(50px) rotateX(0);
+            }
+            52% {
+                transform: translateY(51px) rotateX(180deg);
+            }
+            100% {
+                transform: translateY(5px) rotateX(180deg);
+            }
+        }
+
+        .fire2 {
+            width: 25px;
+            height: 25px;
+            margin-left: 200px;
+            margin-top: 0px;
+            animation: patroly2 1s infinite linear;
+            background-color: transparent;
+        }
+
+        @keyframes patroly2 {
+            0% {
+                transform: translateY(55px) rotateX(0);
+            }
+            50% {
+                transform: translateY(22px) rotateX(0);
+            }
+            52% {
+                transform: translateY(23px) rotateX(180deg);
+            }
+            100% {
+                transform: translateY(55px) rotateX(180deg);
+            }
+        }
+
+        .fire3 {
+            width: 25px;
+            height: 25px;
+            margin-left: 250px;
+            margin-top: 5px;
+            animation: patroly 1s infinite linear;
+            background-color: transparent;
+        }
+
+        .topblock {
+            width: 50px;
+            height: 50px;
+            margin-left: 200px;
+            margin-top: 20px;
+            animation: diagonal 1s infinite linear alternate;
+            background-color: orange;
+            border-radius: 25px;
+            box-shadow: inset 0px 0px 25px 0px red;
+        }
+
+        @keyframes diagonal {
+            0% {
+                transform: translateX(200px) translateY(20px);
+            }
+            50% {
+                transform: translateX(250px) translateY(5px);
+            }
+            100% {
+                transform: translateX(300px) translateY(20px);
+            }
+        }
+
+        .vlong {
+            width: 30px;
+            height: 280px;
+            margin-left: 120px;
+            margin-top: 100px;
+        }
+
+        @keyframes spinreverse {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .k4 {
+            width: 50px;
+            height: 10px;
+            margin-top: 30px;
+            margin-left: 300px;
+            animation: spin 2s linear infinite;
+        }
+
+        .k4dub {
+            width: 50px;
+            height: 10px;
+            margin-top: 45px;
+            margin-left: 580px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes shoot {
+            to {
+                transform: translateX(760px);
+            }
+        }
+
+        .k7-1 {
+            width: 50px;
+            height: 50px;
+            margin-left: 0px;
+            margin-top: 200px;
+            animation: shoot 2s infinite linear;
+            background-color: transparent;
+        }
+
+        .k7-11 {
+            width: 50px;
+            height: 50px;
+            margin-left: 0px;
+            margin-top: 200px;
+            animation: shoot 3s infinite linear;
+            background-color: transparent;
+        }
+
+        .k7-2 {
+            width: 25px;
+            height: 25px;
+            margin-left: 0px;
+            margin-top: 255px;
+            animation: shoot 1s infinite linear;
+            background-color: transparent;
+        }
+
+        .k7-22 {
+            width: 25px;
+            height: 25px;
+            margin-left: 0px;
+            margin-top: 240px;
+            animation: shoot 2s infinite linear;
+            background-color: transparent;
+        }
+
+        .k7-3 {
+            width: 25px;
+            height: 25px;
+            margin-left: 0px;
+            margin-top: 130px;
+            animation: shoot 3s infinite linear;
+            background-color: transparent;
+        }
+
+        .k7-33 {
+            width: 25px;
+            height: 25px;
+            margin-left: 0px;
+            margin-top: 130px;
+            animation: shoot 5s infinite linear;
+            background-color: transparent;
+        }
+
+        @keyframes patrolx {
+            0% {
+                transform: translateX(0px) rotateY(0deg);
+            }
+            50% {
+                transform: translateX(100px) rotateY(0deg);
+            }
+            52% {
+                transform: translateX(104px) rotateY(180deg);
+            }
+            100% {
+                transform: translateX(0px) rotateY(180deg);
+            }
+        }
+
+        @keyframes flipyaxis {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .k8 {
+            width: 75px;
+            height: 75px;
+            margin-left: 680px;
+            margin-top: 20px;
+            animation: pop 2s infinite alternate;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.5);
+            }
+        }
+
+        .jawsdown {
+            width: 100px;
+            height: 25px;
+            margin-left: 450px;
+            margin-top: 330px;
+            animation: jawsdown 1s infinite linear alternate;
+        }
+
+        @keyframes jawsdown {
+            from {
+                height: 0px;
+            }
+            to {
+                height: 150px;
+            }
+        }
+
+        .dancingblock {
+            width: 100px;
+            height: 10px;
+            margin-left: 300px;
+            margin-top: 337px;
+            animation: dancingblock 1s infinite linear alternate;
+        }
+
+        @keyframes dancingblock {
+            0% {
+                height: 300px;
+                transform: rotateX(90deg);
+            }
+            100% {
+                height: 0px;
+                transform: rotateX(180deg);
+            }
+        }
+
+        .k4crossh {
+            width: 150px;
+            height: 30px;
+            margin-top: 390px;
+            margin-left: 20px;
+            animation: spinreverse 3s linear infinite;
+        }
+
+        .k4crossv {
+            width: 30px;
+            height: 150px;
+            margin-top: 332px;
+            margin-left: 78px;
+            animation: spinreverse 3s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="topblock kill"></div>
+
+        <div class="start safe textbox"><span>Mouse over to start</span></div>
+
+        <div class="fire1 kill">
+            <img src="feu2.gif" alt="fireball" height="25" width="25">
+        </div>
+
+        <div class="fire2 kill">
+            <img src="feu2.gif" alt="fireball" height="25" width="25">
+        </div>
+
+        <div class="fire3 kill">
+            <img src="feu2.gif" alt="fireball" height="25" width="25">
+        </div>
+
+        <div class="k7-1 kill">
+            <img src="feu.gif" alt="fireball2" height="50" width="50">
+        </div>
+
+        <div class="k7-11 kill">
+            <img src="feu.gif" alt="fireball2" height="50" width="50">
+        </div>
+
+        <div class="k7-2 kill">
+            <img src="feu.gif" alt="fireball2" height="50" width="50">
+        </div>
+
+        <div class="k7-33 kill">
+            <img src="feu.gif" alt="fireball2" height="50" width="50">
+        </div>
+
+        <div class="hlong kill"></div>
+        <div class="hlong2 kill"></div>
+        <div class="k8 kill"></div>
+
+        <div class="k4 kill"></div>
+        <div class="k4dub kill"></div>
+
+        <div class="dancingblock kill"></div>
+        <div class="jawsdown kill"></div>
+
+        <div class="k4crossv kill"></div>
+        <div class="k4crossh kill"></div>
+
+        <div class="safe"></div>
+        <div class="safe textbox goal"><a href="win.html">Click<br/>here!</a></div>
+        <div class="cover"></div>
+    </div>
+
+    <div class="infobox">
+      <h1>CSS Mouse Maze</h1>
+      <h2>By Deividas Rutkauskas and Fergus Kelley</h2>
+    </div>
+
+</body>
+
+</html>

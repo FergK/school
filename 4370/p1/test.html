@@ -1,0 +1,202 @@
+<html>
+<head>
+  <title>Project 1 Test</title>
+  <style>
+
+/*block right-click*/
+
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  div {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+  }
+
+  .container {
+    position: inherit;
+    margin: 0px auto;
+    background-color: red;
+    width: 500px;
+    height: 500px;
+  }
+
+  .container div {
+    position: absolute;
+  }
+
+  .cover {
+    background-color: black;
+    opacity: 0.50;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+  }
+
+  .safe {
+    background-color: lightblue;
+    z-index: 0;
+    width: 500px;
+    height: 500px;
+    display: block;
+  }
+
+  .start {
+    background-color: green;
+    z-index: 1000;
+    width: 100;
+    height: 100;
+    margin-top: 100px;
+    margin-left: 300px;
+  }
+
+  .goal {
+    background-color: lightgreen;
+    z-index: 600;
+    width: 60;
+    height: 100;
+    margin-top: 100px;
+    margin-left: 0px;
+  }
+
+  .textbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .safe:hover ~ .cover {
+    display: none;
+  }
+
+  .kill:hover ~ .cover {
+    display: block;
+  }
+
+  .kill {
+    background-color: grey;
+    z-index: 500;
+  }
+
+  .k1 {
+    width: 500px;
+    height: 20px;
+    animation: crush 1s ease-in infinite;
+  }
+  @keyframes crush {
+    to { transform: translateY(80px), rotate(60deg);}
+  }
+
+  .k2 {
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    animation: backnforth 1s ease-in-out infinite alternate;
+  }
+  @keyframes backnforth {
+    to { transform: translateX(400px); }
+  }
+
+  .k3 {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    margin-left: 400px;
+  }
+
+  .k4 {
+    width: 100px;
+    height: 40px;
+    margin-top: 130px;
+    margin-left: 100px;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    to { transform:rotate(360deg); }
+  }
+
+  .k5 {
+    width: 50px;
+    height: 50px;
+    margin-top: 350px;
+    margin-left: 450px;
+    animation: shoot 2s linear infinite;
+    /*animation: pulse 0.5s linear infinite;*/
+  }
+  @keyframes shoot {
+    to { transform: translateX(-450px); }
+  }
+
+  .k6 {
+    width: 50px;
+    height: 50px;
+    margin-top: 375px;
+    margin-left: 75px;
+    z-index: 500;
+    animation: circleupdown 1s ease-in-out infinite alternate;
+  }
+  @keyframes circleupdown {
+    to { transform: translateY(-50px); }
+    from { transform: translateY(50px); }
+
+    0% {
+
+    }
+    20 % {
+
+    }
+  }
+
+  .k7 {
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    margin-left: 0px;
+    margin-top: 0px;
+    animation: circleleftright 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes circleleftright {
+    from { transform: translateX(-50px); }
+    to { transform: translateX(50px); }
+  }
+
+  .k8 {
+    width: 75px;
+    height: 75px;
+    margin-left: 425px;
+    margin-top: 425px;
+    animation: pop 2s steps(2) infinite;
+  }
+  @keyframes pop {
+    from { transform: translateX(0px); }
+    to { transform: translateX(10000px); }
+  }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="start safe textbox"><span>Mouse over to start</span></div>
+    <div class="k1 kill"></div>
+    <div class="k2 kill"></div>
+    <div class="k3 kill"></div>
+    <div class="k4 kill"></div>
+    <div class="k5 kill"></div>
+    <div class="k6"><div class="k7 kill"></div></div>
+    <div class="k8 kill"></div>
+    <div class="safe"></div>
+    <div class="goal safe textbox"><a href="http://google.com">Click here!</a></div>
+    <div class="cover"></div>
+  </div>
+
+
+</body>
+</html>
