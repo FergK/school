@@ -1,0 +1,40 @@
+/*
+Fergus Kelley
+Assignment #3
+CSC4370 Web Programming
+*/
+body {
+  font-family: Consolas, "Lucida Console", "Bitstream Vera Sans Mono", monospace;
+  background-color: #E3E7D0;
+}
+
+#checkerboard {
+  width: 300px;
+  /*border-collapse: collapse;*/
+}
+
+.checkercell {
+  border: 1px solid black;
+  padding: 1px;
+  margin: 1px;
+  width: 35px;
+  height: 35px;
+}
+
+.redcell {
+  background-color: red;
+}
+
+.blackcell {
+  background-color: black;
+}
+
+.restaurantTable {
+  border-collapse: collapse;
+}
+
+.restaurantTable tr td {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 1px;
+}
