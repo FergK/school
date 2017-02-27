@@ -1,0 +1,37 @@
+/*
+Fergus Kelley
+Assignment #4 - Part 1
+CSC4370 Web Programming
+*/
+body {
+  font-family: sans-serif;
+  background-color: #ffffee;
+  line-height: 1.6em;
+}
+
+.container {
+  width: 80%;
+  min-width: 640px;
+  max-width: 1024px;
+  margin: 0px auto;
+}
+
+hr {
+  border: 1px solid #ff8000;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+textarea {
+  vertical-align: top;
+  height: 3em;
+  width: 400px;
+}
+
+select {
+  width: 200px;
+}

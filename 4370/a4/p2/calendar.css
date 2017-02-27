@@ -1,0 +1,42 @@
+/*
+Fergus Kelley
+Assignment #4 - Part 2
+CSC4370 Web Programming
+*/
+body {
+  font-family: sans-serif;
+  background-color: #ffffee;
+  line-height: 1.6em;
+}
+
+.container {
+  width: 80%;
+  min-width: 640px;
+  max-width: 1024px;
+  margin: 0px auto;
+}
+
+hr {
+  border: 1px solid #ff8000;
+}
+
+.calendar {
+  background-color: #eef;
+  border-collapse: collapse;
+}
+
+.calendar tr:nth-child(odd) {
+   background-color: #eed;
+}
+
+.calhead {
+  background-color: #ddd !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar tr td {
+  border: 1px solid #008;
+  padding: 10px;
+  width: 150px;
+}
