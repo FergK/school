@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #5
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #5</title>
+
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #ffffee;
+        line-height: 1.8em;
+      }
+
+      label {
+        display: inline-block;
+        width: 6em;
+        text-align: right;
+        padding-right: 3px;
+      }
+
+      .error {
+        font-weight: bold;
+        color: red;
+      }
+
+      button {
+        padding: 4px 12px;
+      }
+    </style>
+
+    <!-- Javascript -->
+    <script>
+
+      function validate() {
+
+        var alertString = "Please enter values for "
+        var successString = ""
+        var displayAlert = false;
+
+        var fields = [];
+        fields.push( ['id', 'ID'] );
+        fields.push( ['fname', 'First Name'] );
+        fields.push( ['lname', 'Last Name'] );
+        console.log(fields);
+
+        for ( var i in fields ) {
+          var field_value = document.getElementById( fields[i][0] + '_field' ).value;
+          if ( field_value === "" ) {
+            if ( displayAlert ) {
+              alertString += ", "
+            }
+            alertString += fields[i][1];
+            displayAlert = true;
+            document.getElementById(fields[i][0] + '_error').innerHTML = "Please enter " + fields[i][1];
+          } else {
+
+            successString += fields[i][1] + ": " + field_value + "<br/>";
+            document.getElementById(fields[i][0] + '_error').innerHTML = "";
+          }
+        }
+
+        if ( displayAlert ) {
+          alert(alertString);
+          document.getElementById('success_label').innerHTML = "";
+        } else {
+          document.getElementById('success_label').innerHTML = successString;
+        }
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fergus Kelley CSC4370 Assignment #5</h1>
+      <div>
+        <label id="id_label" for="id_field">ID:</label>
+        <input id="id_field" name="id_field" type="text" />
+        <span id="id_error"class="error"></span>
+      </div>
+      <div>
+        <label id="fname_label" for="fname_field">First Name:</label>
+        <input id="fname_field" name="fname_field" type="text" />
+        <span id="fname_error"class="error"></span>
+      </div>
+      <div>
+        <label id="lname_label" for="lname_field">Last Name:</label>
+        <input id="lname_field" name="lname_field" type="text" />
+        <span id="lname_error"class="error"></span>
+      </div>
+      <div>
+        <label id="add_label" for="add_button"></label>
+        <button id="add_button" onclick="validate()">Add</button>
+        <div id="success_label"></div>
+      </div>
+    </div>
+  </body>
+</html>
