@@ -1,0 +1,9 @@
+Fergus Kelley
+Assignment #6
+CSC4370 Web Programming
+
+Link to assignment on Codd:
+http://codd.cs.gsu.edu/~fkelley2/a5/
+
+Link to assignment on Github:
+http://fergk.github.io/school/4370/a6/index.html

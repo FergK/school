@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #6
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #6</title>
+
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #ffffee;
+        line-height: 1.8em;
+      }
+
+      .container {
+        text-align: center;
+      }
+    </style>
+
+    <!-- Javascript -->
+    <script src="b.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fergus Kelley CSC4370 Assignment #6</h1>
+      <hr />
+      <a href="index.html">Part A</a> &mdash;
+      <a href="b.html">Part B</a> &mdash;
+      <a href="c.html">Part C</a><br />
+      <a href="b.js">Javascript for this page</a> &mdash; <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fcodd.cs.gsu.edu%2F~fkelley2%2Fa6%2Fb.html">W3C Validator</a>
+      <hr />
+      <h2>Guess the number!</h2>
+      <div>
+        <label id="guessLabel" for="guessField">Your guess:</label>
+        <input id="guessField" name="guessField" type="text" />
+        <button id="guessButton" onclick="guess()">Guess!</button>
+        <div id="result"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #6
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #6</title>
+
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #ffffee;
+        line-height: 1.8em;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 0px auto;
+      }
+
+      tr {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      tr td {
+        margin: 0px;
+        padding: 4px;
+        border: 2px solid black;
+      }
+
+      table tr td img {
+        width: 120px;
+        height: 120px;
+      }
+    </style>
+
+    <!-- Javascript -->
+    <script src="c.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fergus Kelley CSC4370 Assignment #6</h1>
+      <hr />
+      <a href="index.html">Part A</a> &mdash;
+      <a href="b.html">Part B</a> &mdash;
+      <a href="c.html">Part C</a><br />
+      <a href="c.js">Javascript for this page</a> &mdash; <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fcodd.cs.gsu.edu%2F~fkelley2%2Fa6%2Fc.html">W3C Validator</a>
+      <hr />
+      <h2>Matching Game</h2>
+      <div id="instructions">
+        <div>Click on the pictures to match each pair. You'll have to wait if you get it wrong. Find all the pairs to win!</div>
+        <div>
+          <label id="picLabel" for="picSelect">Number of pictures:</label>
+          <select id="picSelect" name="picSelect">
+            <option value="8" selected>8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+          </select><br/>
+          <label id="secsLabel" for="secsSelect">Memorization time:</label>
+          <select id="secsSelect" name="secsSelect">
+            <option value="3" selected>3 seconds</option>
+            <option value="5">5 seconds</option>
+            <option value="8">8 seconds</option>
+          </select><br/>
+          <button id="startButton" onclick="start()">Start The Game!</button>
+        </div>
+      </div>
+      <div id="timerText"></div>
+      <table id="matchTable"></table>
+    </div>
+  </body>
+</html>

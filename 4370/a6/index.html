@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #6
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #6</title>
+
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #ffffee;
+        line-height: 1.8em;
+      }
+
+      label {
+        display: inline-block;
+        text-align: right;
+        padding-right: 3px;
+      }
+
+      .error {
+        font-weight: bold;
+        color: red;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      tr {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      tr td {
+        margin: 0px;
+        padding: 4px;
+        border: 2px solid black;
+      }
+
+      #totalRow, #headRow {
+        font-weight: bold;
+        background-color: #eef;
+      }
+    </style>
+
+    <!-- Javascript -->
+    <script src="a.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fergus Kelley CSC4370 Assignment #6</h1>
+      <hr />
+      <a href="index.html">Part A</a>&mdash;
+      <a href="b.html">Part B</a> &mdash;
+      <a href="c.html">Part C</a><br />
+      <a href="a.js">Javascript for this page</a> &mdash; <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fcodd.cs.gsu.edu%2F~fkelley2%2Fa6%2Findex.html">W3C Validator</a>
+      <hr />
+      <h2>Employee Payroll Report</h2>
+      <table id="employeeTable">
+        <tr id="headRow">
+          <td>Employee</td>
+          <td>Hours Worked</td>
+          <td>Pay</td>
+        </tr>
+        <tr id="totalRow">
+          <td>Total:</td>
+          <td id="totalHoursCell">0</td>
+          <td id="totalPayCell">0</td>
+        </tr>
+      </table>
+      <h2>Add Employee</h2>
+      <div>
+        <label id="hoursLabel" for="hoursField">Hours worked:</label>
+        <input id="hoursField" name="hoursField" type="text" />
+        <button id="addButton" onclick="addEmployee()">Add</button>
+        <span id="hoursError" class="error"></span>
+      </div>
+    </div>
+  </body>
+</html>
