@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #7
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 1</title>
+
+    <!-- Fetch JQuery from the CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            background-color: #ffffee;
+            line-height: 1.8em;
+        }
+
+        .container {
+          width: 80%;
+          min-width: 640px;
+          max-width: 1024px;
+          margin: 0px auto;
+        }
+
+        .formSection {
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 3px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 1</h1>
+        <hr />
+        <a href="index.html">Part 1</a> &mdash;
+        <a href="2.html">Part 2</a> &mdash;
+        <a href="3.html">Part 3</a>
+        <hr />
+        <h2>Payment</h2>
+        <div id="paymentFields" class="formSection">
+            <input type="radio" name="payment" value="credit" id="creditRadio" />
+            <label id="creditLabel" for="creditRadio">Credit card</label>
+
+            <input type="radio" name="payment" value="wire" id="wireRadio"/>
+            <label id="wireLabel" for="wireRadio">Wire transfer</label>
+        </div>
+
+        <div id="ccFields" class="formSection hidden">
+            <label for="ccNumField">Card number:</label>
+            <input id="ccNumField" name="ccNumField" type="number" size='16' minlength='16' maxlength='16'/><br/>
+
+            <label for="ccExpFieldMonth">Expiration:</label>
+            <input id="ccExpFieldMonth" name="ccExpFieldMonth" type="number" size='2' minlength='2' maxlength='2'/> /
+            <input id="ccExpFieldYear" name="ccExpFieldYear" type="number" size='4' minlength='4' maxlength='4'/> (mm/yyyy)<br/>
+
+            <label for="ccSecField">Security number:</label>
+            <input id="ccSecField" name="ccSecField" type="number" size='4' minlength='3' maxlength='3'/><br/>
+        </div>
+
+        <div id="wireFields" class="formSection hidden">
+            Transfer the amount to: reg. $957.00, to account 0009286322
+        </div>
+
+        <div id="buttonFields" class="formSection hidden" >
+            <button id="buyButton">Buy!</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('input[type=radio][name=payment]').change(function() {
+                if (this.value == 'credit') {
+                    $('#ccFields').show();
+                    $('#wireFields').hide();
+                    $('#buttonFields').show();
+                } else if (this.value == 'wire') {
+                    $('#ccFields').hide();
+                    $('#wireFields').show();
+                    $('#buttonFields').show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

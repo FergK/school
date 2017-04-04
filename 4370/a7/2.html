@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #7
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 2</title>
+
+    <!-- Fetch JQuery UI from the CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            background-color: #ffffee;
+            line-height: 1.8em;
+        }
+
+        .container {
+            width: 80%;
+            min-width: 640px;
+            max-width: 1024px;
+            margin: 0px auto;
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            clear: none;
+        }
+
+        li {
+            max-width: 200px;
+            padding: 3px;
+            margin: 3px;
+        }
+
+        #trashcan {
+            background-color: #fff;
+            height: 200px;
+            margin: 3px auto;
+            padding: 14px;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 2</h1>
+        <hr />
+        <a href="index.html">Part 1</a> &mdash;
+        <a href="2.html">Part 2</a> &mdash;
+        <a href="3.html">Part 3</a>
+        <hr />
+        <h2>Remove list items by dragging them into the trash</h2>
+        <img id="trashcan" class="box" src="trashcan.png"/>
+        <ul>
+            <li class="removable box">Item A</li>
+            <li class="removable box">Item B</li>
+            <li class="removable box">Item C</li>
+            <li class="removable box">Item D</li>
+            <li class="removable box">Item E</li>
+        </ul>
+        <div id="confirm" class="box"></div>
+    </div>
+
+    <script>
+        $( function() {
+
+            var droppedItem = null;
+            // Set the dialog
+            $( "#confirm" ).dialog({
+                title: "Confirm Removal",
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Remove item": function() {
+                        droppedItem.remove();
+                        droppedItem = null;
+                        $( this ).dialog( "close" );
+                    },
+                    Cancel: function() {
+                        droppedItem = null;
+                        $( this ).dialog( "close" );
+                    }
+                }
+            }).dialog( "close" );
+
+            // Set the dialog box to include the name of the dropped item
+            $( "#confirm" ).on( "dialogopen", function( event, ui ) {
+                $( this ).html("Are you sure you want to remove " + droppedItem.html() + "?");
+            } );
+
+            // Set the list items to be able to be dragged
+            $( ".removable" ).draggable({ revert: true });
+
+            // Set the trashcan to be the drop target, delete any elements dropped on it
+            $( "#trashcan" ).droppable({
+                drop: function( event, ui ) {
+                    droppedItem = ui.draggable;
+                    $( "#confirm" ).dialog( "open" );
+                }
+            });
+
+        } );
+    </script>
+</body>
+</html>

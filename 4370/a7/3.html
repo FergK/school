@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<!--
+Fergus Kelley
+Assignment #7
+CSC4370 Web Programming
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 3</title>
+
+    <!-- Fetch JQuery UI from the CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            background-color: #ffffee;
+            line-height: 1.8em;
+        }
+
+        .container {
+            width: 80%;
+            min-width: 640px;
+            max-width: 1024px;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            max-width: 300px;
+            padding: 3px;
+            margin: 3px auto;
+        }
+
+        #info {
+            font-size: 12px;
+            line-height: 1.6em;
+        }
+
+        .cover {
+            float: right;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fergus Kelley CSC4370 Assignment #7 &mdash; Part 3</h1>
+        <hr />
+        <a href="index.html">Part 1</a> &mdash;
+        <a href="2.html">Part 2</a> &mdash;
+        <a href="3.html">Part 3</a>
+        <hr />
+        <h2>Click on each item for more information</h2>
+        <ul>
+            <li class="informationable box" id="hp">Harry Potter</li>
+            <li class="informationable box" id="lotr">Lord of the Rings</li>
+            <li class="informationable box" id="hdm">His Dark Materials</li>
+        </ul>
+        <div id="info"></div>
+    </div>
+
+    <script>
+        $( function() {
+
+            var informationID = null;
+            // Set the dialog
+            $( "#info" ).dialog({
+                title: "Confirm Removal",
+                resizable: false,
+                height: "auto",
+                width: 640,
+                modal: true
+            }).dialog( "close" );
+
+            $( ".informationable" ).click(function() {
+                informationID = $( this ).attr('id');
+
+                // Set the dialog title to the name of the book
+                $( "#info" ).dialog({ title: $( "#" + informationID ).html() })
+
+                // Use AJAX to get the information about the book from a file
+                $.get( ( informationID + ".html" ), function( data ) {
+                  $( "#info" ).html(data);
+                });
+
+                $( "#info" ).dialog( "open" );
+            });
+
+        } );
+    </script>
+</body>
+</html>
